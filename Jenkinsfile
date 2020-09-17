@@ -32,7 +32,7 @@ pipeline {
         stage('Check WebApp Rechability') {
           steps {
           sh 'sleep 10s'
-          sh ' curl ec2-34-231-242-1.compute-1.amazonaws.com:8000'
+          sh ' curl ec2-3-218-142-162.compute-1.amazonaws.com:8000'
           }
         }
 
