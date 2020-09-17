@@ -4,7 +4,7 @@ pipeline {
 
         stage('Clone Repo') {
           steps {
-            sh 'rm -rf drumkit'
+            sh 'rm -rf Drum-Kit'
             sh 'git clone https://github.com/panrajucs/Drum-Kit.git'
             }
         }
