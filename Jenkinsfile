@@ -24,15 +24,15 @@ pipeline {
 
         stage('Deploy to Docker Host') {
           steps {
-            sh    'docker -H tcp://10.1.1.203:2375 stop prodwebapp1 || true'
-            sh    'docker -H tcp://10.1.1.203:2375 run --rm -dit --name prodwebapp1 --hostname prodwebapp1 -p 8000:80 padrajucs/drumkit:${BUILD_NUMBER}'
+            sh    'docker -H tcp://10.1.1.200:2375 stop prodwebapp1 || true'
+            sh    'docker -H tcp://10.1.1.200:2375 run --rm -dit --name prodwebapp1 --hostname prodwebapp1 -p 8000:80 padrajucs/drumkit:${BUILD_NUMBER}'
             }
         }
 
         stage('Check WebApp Rechability') {
           steps {
           sh 'sleep 10s'
-          sh ' curl ec2-18-207-100-181.compute-1.amazonaws.com:8000'
+          sh ' curl ec2-3-238-69-199.compute-1.amazonaws.com:8000'
           }
         }
 
